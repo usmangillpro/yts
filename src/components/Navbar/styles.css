@@ -1,0 +1,10 @@
+.bg-color-nav {
+  background: rgba(25, 25, 112, 0.658);
+  z-index: 2;
+
+  /* background-color: rgba(176, 224, 230, 0.863), rgb(255, 255, 255); */
+}
+.z-down {
+  background: rgb(135, 206, 250);
+  z-index: 1;
+}
