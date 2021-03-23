@@ -5,6 +5,7 @@ const searchAction = (term) => async (dispatch) => {
     params: {
       query_term: term,
       sort_by: "download_count",
+      limit: 6,
     },
   });
   const data = response.data.data.movies;

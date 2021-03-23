@@ -1,19 +1,24 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
-import MovieCards from "./MovieCards";
+import MovieCards from "./MovieCards/MovieCards";
+import MovieDetails from "./MovieDetails/MovieDetails";
+import history from "../history";
 
 const App = () => {
   return (
-    <div className="container">
-      <BrowserRouter>
+    <div>
+      <Router history={history}>
         <Navbar />
         <Switch>
           <Route exact path="/">
-            {/* <MovieCards /> */}
+            <MovieCards />
+          </Route>
+          <Route exact path="/details/:movieId">
+            <MovieDetails />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };

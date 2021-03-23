@@ -1,9 +1,12 @@
 import yts from "../../api/yts";
 
 const ytsFetch = () => async (dispatch) => {
-  const response = await yts.get("/list_movies.json");
+  const response = await yts.get("/list_movies.json", {
+    params: {
+      limit: 8,
+    },
+  });
   const data = response.data.data.movies;
-  // const data = response.map((res) => console.log(res));
   dispatch({ type: "YTS_FETCH", payload: data });
 };
 
