@@ -5,9 +5,11 @@ import MovieCards from "./MovieCards/MovieCards";
 import MovieDetails from "./MovieDetails/MovieDetails";
 import history from "../history";
 
+import "../components/assets/App.css";
+
 const App = () => {
   return (
-    <div>
+    <div className="hero-background">
       <Router history={history}>
         <Navbar />
         <Switch>

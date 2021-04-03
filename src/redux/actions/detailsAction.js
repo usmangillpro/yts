@@ -4,6 +4,7 @@ const detailsAction = (movieIds) => async (dispatch) => {
   const response = await yts.get("/movie_details.json", {
     params: {
       movie_id: movieIds,
+      with_cast: true,
     },
   });
 

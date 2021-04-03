@@ -40,8 +40,8 @@ const PopularDownloads = () => {
       <h3 className="d-flex justify-content-center">
         Popular Downloads{" "}
         <i
-          className="bi bi-star-fill"
-          style={{ color: "seagreen", marginLeft: "10px" }}
+          className="bi bi-award-fill"
+          style={{ color: "#ff9800", marginLeft: "10px" }}
         />
       </h3>
       <hr />

@@ -3,6 +3,8 @@ import detailsAction from "../../redux/actions/detailsAction";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import DownloadTab from "./DownloadTab";
+import Comments from "./Comments";
+import Cast from "./Cast";
 import MovieSuggestions from "./MovieSuggestions";
 import "./MovieDetails.css";
 import imdb from "./imdb.png";
@@ -10,6 +12,7 @@ import imdb from "./imdb.png";
 const MovieDetails = () => {
   const data = useSelector((state) => state.details);
   const tor = data.torrents;
+  const cast = data.cast;
   // const rendertorrents = tor.map((items) => console.log(items));
   // const data_2 = useSelector((state) => state.details.torrents);
   const dispatch = useDispatch();
@@ -20,7 +23,7 @@ const MovieDetails = () => {
   useEffect(() => {
     dispatch(detailsAction(movieId));
   }, [dispatch, movieId]);
-
+  console.log(data);
   const torrentsList = () => {
     if (!tor) {
       return (
@@ -58,7 +61,7 @@ const MovieDetails = () => {
       }}
     >
       <div className="container">
-        <div className="col-12 d-flex justify-content-around mt-4">
+        <div className="col-12 d-flex justify-content-evenly mt-4">
           <img
             className="col-3"
             src={data.medium_cover_image}
@@ -66,10 +69,12 @@ const MovieDetails = () => {
             style={{ maxWidth: "min-content" }}
           />
           <div className="col-3">
-            <DownloadTab torrents={tor} />
+            <h3>Cast</h3>
+            <hr style={{ width: "50%" }} />
+            <Cast cast={cast} />
           </div>
 
-          <div className="col-4">
+          <div className="col-4" style={{ maxWidth: "30%" }}>
             <h3>{data.title}</h3>
             <p>{data.year}</p>
             <pre>{`${data.genres}`}</pre>
@@ -106,12 +111,15 @@ const MovieDetails = () => {
           Suggested Movies{" "}
           <i
             className="bi bi-star-fill"
-            style={{ color: "seagreen", marginLeft: "10px" }}
+            style={{ color: "#00cae3", marginLeft: "10px" }}
           />
         </h3>
         <div className="d-flex justify-content-evenly">
           <MovieSuggestions movieId={data.id} />
         </div>
+      </div>
+      <div>
+        <Comments movieId={data.id} />
       </div>
     </div>
   );

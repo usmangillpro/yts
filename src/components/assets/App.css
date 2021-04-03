@@ -1,0 +1,17 @@
+.hero-image {
+  background-image: radial-gradient(
+    circle,
+    rgba(184, 142, 184, 0.6),
+    rgba(35, 229, 132, 0.6)
+  );
+  border-radius: 10px;
+}
+
+.hero-background {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(184, 142, 184, 0.6),
+      rgba(35, 229, 132, 0.6)
+    ),
+    url(./hero.jpg);
+}

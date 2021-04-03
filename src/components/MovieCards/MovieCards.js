@@ -43,6 +43,14 @@ class MovieCards extends React.Component {
             <PopularDownloads />
           </div>
           <hr />
+          <h3 className="d-flex justify-content-center">
+            New Movies{" "}
+            <i
+              className="bi bi-star-fill"
+              style={{ color: "rgb(234, 67, 53)", marginLeft: "10px" }}
+            />
+          </h3>
+          <hr />
           <div className="row justify-content-evenly">{this.renderList()}</div>
           <hr />
           <div className="d-flex row">

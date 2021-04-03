@@ -10,7 +10,7 @@ const MovieSuggestions = ({ movieId }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       dispatch(suggestionsAction(movieId));
-    }, 1000);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);

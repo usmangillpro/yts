@@ -6,6 +6,7 @@ import popularReducer from "./popularReducer";
 import searchReducer from "./searchReducer";
 import upcomingReducer from "./upcomingReducer";
 import suggestionsReducer from "./suggestionsReducer";
+import commentsReducer from "./commentsReducer";
 
 export default combineReducers({
   ytsGet: ytsGetReducer,
@@ -14,4 +15,5 @@ export default combineReducers({
   popular: popularReducer,
   upcoming: upcomingReducer,
   suggestions: suggestionsReducer,
+  comments: commentsReducer,
 });

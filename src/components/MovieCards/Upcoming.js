@@ -11,7 +11,7 @@ const Upcoming = () => {
   }, [dispatch]);
 
   console.log(data);
-  return <div>Upcoming</div>;
+  return <div className={data.length > 0 ? "d-block" : "d-none"}>Upcoming</div>;
 };
 
 export default Upcoming;
